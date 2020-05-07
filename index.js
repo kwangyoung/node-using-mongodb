@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/productsdb', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(console.log(`===> Succeeded in connecting to mongodb`))
-    .catch((err) => console.log(`===> Error connecting to mongodb`));
+    .catch((err) => console.log(`===> Error connecting to mongodb - ${err}`));
 
 app.get('/', (req, res) =>
     res.send(`Store server running on port ${PORT}`)
